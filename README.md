@@ -11,3 +11,9 @@
 
  str()->password(15, numbers: false)
 ```
+
+## Quicker Project Scaffolding
+
+```php
+laravel new laravel10 --pest --breeze
+```
