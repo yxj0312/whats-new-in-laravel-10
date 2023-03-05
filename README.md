@@ -17,3 +17,12 @@
 ```php
 laravel new laravel10 --pest --breeze
 ```
+
+## The New Process Facade
+
+```php
+use  Illuminate\Support\Facades\Process;
+Process::run('ls -la')->output()->exitCode()->errorOutput()->successful() {
+    return 'it worked';
+};
+```
