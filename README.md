@@ -25,4 +25,6 @@ use  Illuminate\Support\Facades\Process;
 Process::run('ls -la')->output()->exitCode()->errorOutput()->successful() {
     return 'it worked';
 };
+
+Process::run('npm run build')->output();
 ```
