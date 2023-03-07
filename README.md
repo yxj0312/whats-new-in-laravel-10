@@ -27,4 +27,26 @@ Process::run('ls -la')->output()->exitCode()->errorOutput()->successful() {
 };
 
 Process::run('npm run build')->output();
+
+Process::run('npm run build', function($$type, $output){
+    $this->info($output);
+});
+
+
+$process = Process::start('npm run build');
+
+Process::fake(['git log' => 'a fake git log'])
+
+while($$process->running()) {
+    $this->info("Working..")
+
+    sleep(1);
+}
+
+$process->wait();
+
+$this->info($$process->output);
+
+Process::assertRan('git log');
+
 ```
