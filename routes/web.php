@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// auth id 1 as admin
+auth()->onceUsingId(1);
+
 Route::get('/', function () {
     return view('welcome');
 });
