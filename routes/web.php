@@ -17,7 +17,19 @@ use Laravel\Pennant\Feature;
 // auth id 1 as admin
 auth()->onceUsingId(1);
 
+
 Route::get('/', function () {
     Feature::activate('new-design');
     return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    if (Feature::active('dashboard-v2')) {
+        return redirect('/new-dahboard');
+    }
+    return 'dashboard';
+});
+
+Route::get('/new-dashboard', function () {
+    return 'new-dashboard';
 });
