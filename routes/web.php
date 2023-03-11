@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Laravel\Pennant\Feature;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,6 @@ use Illuminate\Support\Facades\Route;
 auth()->onceUsingId(1);
 
 Route::get('/', function () {
+    Feature::activate('new-design');
     return view('welcome');
 });
