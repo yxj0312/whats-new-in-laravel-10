@@ -32,4 +32,4 @@ Route::get('/dashboard', function () {
 
 Route::get('/new-dashboard', function () {
     return 'new-dashboard';
-});
+})->middleware('feature:dashboard-v2');
